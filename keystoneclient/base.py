@@ -22,11 +22,11 @@ import copy
 import functools
 import warnings
 
+from keystoneauth1 import plugin
 from oslo_utils import strutils
 import six
 from six.moves import urllib
 
-from keystoneclient import auth
 from keystoneclient import exceptions
 from keystoneclient.i18n import _
 
@@ -389,7 +389,7 @@ class CrudManager(Manager):
                 return self._list(
                     url_query,
                     self.collection_key,
-                    endpoint_filter={'interface': auth.AUTH_INTERFACE})
+                    endpoint_filter={'interface': plugin.AUTH_INTERFACE})
             else:
                 raise
 
@@ -479,7 +479,14 @@ class Resource(object):
     def _add_details(self, info):
         for (k, v) in six.iteritems(info):
             try:
-                setattr(self, k, v)
+                try:
+                    setattr(self, k, v)
+                except UnicodeEncodeError:
+                    # This happens when we're running with Python version that
+                    # does not support Unicode identifiers (e.g. Python 2.7).
+                    # In that case we can't help but not set this attrubute;
+                    # it'll be available in a dict representation though
+                    pass
                 self._info[k] = v
             except AttributeError:  # nosec(cjschaef): we already defined the
                 # attribute on the class

@@ -12,10 +12,11 @@
 
 import uuid
 
+from keystoneauth1 import fixture
+from keystoneauth1 import plugin
+
 from keystoneclient import access
-from keystoneclient import auth
 from keystoneclient.auth.identity import access as access_plugin
-from keystoneclient import fixture
 from keystoneclient import session
 from keystoneclient.tests.unit import utils
 
@@ -48,11 +49,11 @@ class AccessInfoPluginTests(utils.TestCase):
 
     def test_auth_url(self):
         auth_url = 'http://keystone.test.url'
-        plugin = self._plugin(auth_url=auth_url)
+        plug = self._plugin(auth_url=auth_url)
 
         self.assertEqual(auth_url,
-                         plugin.get_endpoint(self.session,
-                                             interface=auth.AUTH_INTERFACE))
+                         plug.get_endpoint(self.session,
+                                           interface=plugin.AUTH_INTERFACE))
 
     def test_invalidate(self):
         plugin = self._plugin()

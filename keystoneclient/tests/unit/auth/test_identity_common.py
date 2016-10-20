@@ -14,6 +14,8 @@ import abc
 import datetime
 import uuid
 
+from keystoneauth1 import fixture
+from keystoneauth1 import plugin
 import mock
 from oslo_utils import timeutils
 import six
@@ -22,7 +24,6 @@ from keystoneclient import access
 from keystoneclient.auth import base
 from keystoneclient.auth import identity
 from keystoneclient import exceptions
-from keystoneclient import fixture
 from keystoneclient import session
 from keystoneclient.tests.unit import utils
 
@@ -191,7 +192,7 @@ class CommonIdentityTests(object):
         s = session.Session(auth=a)
 
         auth_url = s.get_endpoint(service_type='compute',
-                                  interface=base.AUTH_INTERFACE)
+                                  interface=plugin.AUTH_INTERFACE)
 
         self.assertEqual(self.TEST_URL, auth_url)
 
@@ -402,7 +403,7 @@ class CatalogHackTests(utils.TestCase):
 
         sess = session.Session(auth=v2_auth)
 
-        endpoint = sess.get_endpoint(interface=base.AUTH_INTERFACE,
+        endpoint = sess.get_endpoint(interface=plugin.AUTH_INTERFACE,
                                      version=(3, 0))
 
         self.assertEqual(self.V3_URL, endpoint)
