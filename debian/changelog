@@ -1,3 +1,10 @@
+python-keystoneclient (1:3.7.0-0ubuntu1) UNRELEASED; urgency=medium
+
+  * New upstream version.
+  * debian/control:  Bump version dependenices.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Tue, 22 Nov 2016 10:57:22 -0500
+
 python-keystoneclient (1:3.6.0-0ubuntu1) zesty; urgency=medium
 
   * d/gbp.conf: Update gbp configuration file.
