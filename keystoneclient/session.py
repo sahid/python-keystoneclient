@@ -37,6 +37,11 @@ osprofiler_web = importutils.try_import("osprofiler.web")
 
 USER_AGENT = 'python-keystoneclient'
 
+# NOTE(jamielennox): Clients will likely want to print more than json. Please
+# propose a patch if you have a content type you think is reasonable to print
+# here and we'll add it to the list as required.
+_LOG_CONTENT_TYPES = set(['application/json'])
+
 _logger = logging.getLogger(__name__)
 
 
@@ -164,7 +169,7 @@ class Session(object):
     def _process_header(header):
         """Redact the secure headers to be logged."""
         secure_headers = ('authorization', 'x-auth-token',
-                          'x-subject-token',)
+                          'x-subject-token', 'x-service-token')
         if header[0].lower() in secure_headers:
             token_hasher = hashlib.sha1()
             token_hasher.update(header[1].encode('utf-8'))
@@ -201,6 +206,11 @@ class Session(object):
                                     % self._process_header(header))
 
         if data:
+            if isinstance(data, six.binary_type):
+                try:
+                    data = data.decode("ascii")
+                except UnicodeDecodeError:
+                    data = "<binary_data>"
             string_parts.append("-d '%s'" % data)
         try:
             logger.debug(' '.join(string_parts))
@@ -216,7 +226,18 @@ class Session(object):
         if not logger.isEnabledFor(logging.DEBUG):
             return
 
-        text = _remove_service_catalog(response.text)
+        # NOTE(samueldmq): If the response does not provide enough info about
+        # the content type to decide whether it is useful and safe to log it
+        # or not, just do not log the body. Trying to# read the response body
+        # anyways may result on reading a long stream of bytes and getting an
+        # unexpected MemoryError. See bug 1616105 for further details.
+        content_type = response.headers.get('content-type', None)
+        if content_type in _LOG_CONTENT_TYPES:
+            text = _remove_service_catalog(response.text)
+        else:
+            text = ('Omitted, Content-Type is set to %s. Only '
+                    '%s responses have their bodies logged.')
+            text = text % (content_type, ', '.join(_LOG_CONTENT_TYPES))
 
         string_parts = [
             'RESP:',
@@ -224,9 +245,7 @@ class Session(object):
         ]
         for header in six.iteritems(response.headers):
             string_parts.append('%s: %s' % self._process_header(header))
-        if text:
-            string_parts.append('\nRESP BODY: %s\n' %
-                                strutils.mask_password(text))
+        string_parts.append('\nRESP BODY: %s\n' % strutils.mask_password(text))
 
         logger.debug(' '.join(string_parts))
 
