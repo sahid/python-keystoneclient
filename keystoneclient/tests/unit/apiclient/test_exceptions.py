@@ -13,8 +13,6 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import six
-
 from keystoneclient import exceptions
 from keystoneclient.tests.unit import utils
 
@@ -23,7 +21,7 @@ class FakeResponse(object):
     json_data = {}
 
     def __init__(self, **kwargs):
-        for key, value in six.iteritems(kwargs):
+        for key, value in kwargs.items():
             setattr(self, key, value)
 
     def json(self):
@@ -40,7 +38,7 @@ class ExceptionsArgsTest(utils.TestCase):
             method,
             url)
         self.assertIsInstance(ex, ex_cls)
-        self.assertEqual(ex.message, json_data["error"]["message"])
+        self.assertIn(json_data["error"]["message"], ex.message)
         self.assertEqual(ex.details, json_data["error"]["details"])
         self.assertEqual(ex.method, method)
         self.assertEqual(ex.url, url)

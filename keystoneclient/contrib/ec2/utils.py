@@ -218,14 +218,14 @@ class Ec2Signer(object):
             # - the Authorization header (SignedHeaders key)
             # - the X-Amz-SignedHeaders query parameter
             headers_lower = dict((k.lower().strip(), v.strip())
-                                 for (k, v) in six.iteritems(headers))
+                                 for (k, v) in headers.items())
 
             # Boto versions < 2.9.3 strip the port component of the host:port
             # header, so detect the user-agent via the header and strip the
             # port if we detect an old boto version.  FIXME: remove when all
             # distros package boto >= 2.9.3, this is a transitional workaround
             user_agent = headers_lower.get('user-agent', '')
-            strip_port = re.match('Boto/2.[0-9].[0-2]', user_agent)
+            strip_port = re.match('Boto/2\.[0-9]\.[0-2]', user_agent)
 
             header_list = []
             sh_str = auth_param('SignedHeaders')

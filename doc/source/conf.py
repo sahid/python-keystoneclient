@@ -13,9 +13,7 @@
 from __future__ import unicode_literals
 
 import os
-import subprocess
 import sys
-import warnings
 
 import pbr.version
 
@@ -37,7 +35,7 @@ extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.todo',
               'sphinx.ext.coverage',
               'sphinx.ext.intersphinx',
-              'oslosphinx',
+              'openstackdocstheme',
              ]
 
 todo_include_todos = True
@@ -116,6 +114,7 @@ modindex_common_prefix = ['keystoneclient.']
 # Sphinx are currently 'default' and 'sphinxdoc'.
 #html_theme_path = ["."]
 #html_theme = '_theme'
+html_theme = 'openstackdocs'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -148,14 +147,7 @@ modindex_common_prefix = ['keystoneclient.']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
-git_cmd = ["git", "log", "--pretty=format:'%ad, commit %h'", "--date=local",
-           "-n1"]
-try:
-    html_last_updated_fmt = subprocess.Popen(git_cmd,
-                                     stdout=subprocess.PIPE).communicate()[0]
-except Exception:
-    warnings.warn('Cannot get last updated time from git repository. '
-                  'Not setting "html_last_updated_fmt".')
+html_last_updated_fmt = '%Y-%m-%d %H:%M'
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.
@@ -227,9 +219,14 @@ latex_documents = [
 # If false, no module index is generated.
 #latex_use_modindex = True
 
-keystoneauth_url = 'http://docs.openstack.org/developer/keystoneauth/'
+keystoneauth_url = 'https://docs.openstack.org/keystoneauth/latest/'
 intersphinx_mapping = {
-    'python': ('http://docs.python.org/', None),
-    'osloconfig': ('http://docs.openstack.org/developer/oslo.config/', None),
+    'python': ('https://docs.python.org/', None),
+    'osloconfig': ('https://docs.openstack.org/oslo.config/latest/', None),
     'keystoneauth1': (keystoneauth_url, None),
 }
+
+# -- Options for openstackdocstheme -------------------------------------------
+repository_name = 'openstack/python-keystoneclient'
+bug_project = 'python-keystoneclient'
+bug_tag = ''

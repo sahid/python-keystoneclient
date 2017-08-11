@@ -97,7 +97,7 @@ class ClientTest(utils.TestCase):
                 cl.get('/hi')
         except exceptions.BadRequest as exc:
             exc_raised = True
-            self.assertEqual(exc.message, "Error message string")
+            self.assertEqual(exc.message, "Error message string (HTTP 400)")
         self.assertTrue(exc_raised, 'Exception not raised.')
 
     def test_post(self):
@@ -202,10 +202,10 @@ class BasicRequestTests(utils.TestCase):
 
         self.request(headers=headers)
 
-        for k, v in six.iteritems(headers):
+        for k, v in headers.items():
             self.assertRequestHeaderEqual(k, v)
 
-        for header in six.iteritems(headers):
+        for header in headers.items():
             self.assertThat(self.logger_message.getvalue(),
                             matchers.Contains('-H "%s: %s"' % header))
 
