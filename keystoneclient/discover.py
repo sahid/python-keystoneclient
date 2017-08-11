@@ -10,13 +10,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import logging
 import warnings
 
 from debtcollector import removals
 from keystoneauth1 import plugin
 from positional import positional
-import six
 
 from keystoneclient import _discover
 from keystoneclient import exceptions
@@ -24,9 +22,6 @@ from keystoneclient.i18n import _
 from keystoneclient import session as client_session
 from keystoneclient.v2_0 import client as v2_client
 from keystoneclient.v3 import client as v3_client
-
-
-_logger = logging.getLogger(__name__)
 
 
 _CLIENT_VERSIONS = {2: v2_client.Client,
@@ -231,7 +226,7 @@ class Discover(_discover.Discover):
 
         :returns: The endpoints returned from the server that match the
                   criteria.
-        :rtype: list
+        :rtype: List
 
         Example::
 
@@ -300,7 +295,7 @@ class Discover(_discover.Discover):
             raise exceptions.DiscoveryFailure(msg)
 
         # kwargs should take priority over stored kwargs.
-        for k, v in six.iteritems(self._client_kwargs):
+        for k, v in self._client_kwargs.items():
             kwargs.setdefault(k, v)
 
         # restore the url to either auth_url or endpoint depending on what
