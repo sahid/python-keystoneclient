@@ -3,74 +3,77 @@ Section: python
 Priority: extra
 Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
 XSBC-Original-Maintainer: PKG OpenStack <openstack-devel@lists.alioth.debian.org>
-Uploaders: Thomas Goirand <zigo@debian.org>,
-           Corey Bryant <corey.bryant@canonical.com>,
-Build-Depends: debhelper (>= 9),
-               dh-python,
-               openstack-pkg-tools,
-               python-all,
-               python-pbr (>= 2.0.0),
-               python-setuptools,
-               python-sphinx,
-               python3-all,
-               python3-pbr (>= 2.0.0),
-Build-Depends-Indep: memcached,
-                     python-coverage (>= 4.0),
-                     python-debtcollector (>= 1.2.0),
-                     python-fixtures (>= 3.0.0),
-                     python-hacking (>= 0.10.0),
-                     python-keyring (>= 5.5.1),
-                     python-keystoneauth1 (>= 3.0.1),
-                     python-lxml (>= 2.3),
-                     python-mock (>= 2.0),
-                     python-oauthlib (>= 0.6),
-                     python-openstackdocstheme (>= 1.11.0),
-                     python-oslo.config (>= 1:4.0.0),
-                     python-oslo.i18n (>= 2.1.0),
-                     python-oslo.serialization (>= 1.10.0),
-                     python-oslo.utils (>= 3.20.0),
-                     python-oslotest (>= 1.10.0),
-                     python-positional (>= 1.1.1),
-                     python-requests (>= 2.14.2),
-                     python-requests-mock (>= 1.1),
-                     python-six (>= 1.9.0),
-                     python-sphinx (>= 1.2.1),
-                     python-stevedore (>= 1.20.0),
-                     python-tempest (>= 1:16.1.0),
-                     python-testrepository (>= 0.0.18),
-                     python-testresources (>= 0.2.4),
-                     python-testscenarios (>= 0.4),
-                     python-testtools (>= 1.4.0),
-                     python3-coverage (>= 4.0),
-                     python3-debtcollector (>= 1.2.0),
-                     python3-fixtures (>= 3.0.0),
-                     python3-hacking (>= 0.10.0),
-                     python3-keyring (>= 5.5.1),
-                     python3-keystoneauth1 (>= 3.0.1),
-                     python3-lxml (>= 2.3),
-                     python3-mock (>= 2.0),
-                     python3-oauthlib (>= 0.6),
-                     python3-openstackdocstheme (>= 1.11.0),
-                     python3-oslo.config (>= 1:4.0.0),
-                     python3-oslo.i18n (>= 2.1.0),
-                     python3-oslo.serialization (>= 1.10.0),
-                     python3-oslo.utils (>= 3.20.0),
-                     python3-oslotest (>= 1.10.0),
-                     python3-pep8,
-                     python3-positional (>= 1.1.1),
-                     python3-requests (>= 2.14.2),
-                     python3-requests-mock (>= 1.1),
-                     python3-six (>= 1.9.0),
-                     python3-sphinx (>= 1.2.1),
-                     python3-stevedore (>= 1.20.0),
-                     python3-subunit,
-                     python3-tempest (>= 1:16.1.0),
-                     python3-testrepository (>= 0.0.18),
-                     python3-testresources (>= 0.2.4),
-                     python3-testscenarios (>= 0.4),
-                     python3-testtools (>= 1.4.0),
-                     subunit,
-                     testrepository
+Uploaders:
+ Thomas Goirand <zigo@debian.org>,
+ Corey Bryant <corey.bryant@canonical.com>,
+Build-Depends:
+ debhelper (>= 9),
+ dh-python,
+ openstack-pkg-tools,
+ python-all,
+ python-pbr (>= 2.0.0),
+ python-setuptools,
+ python-sphinx,
+ python3-all,
+ python3-pbr (>= 2.0.0),
+Build-Depends-Indep:
+ memcached,
+ python-coverage (>= 4.0),
+ python-debtcollector (>= 1.2.0),
+ python-fixtures (>= 3.0.0),
+ python-hacking (>= 0.10.0),
+ python-keyring (>= 5.5.1),
+ python-keystoneauth1 (>= 3.0.1),
+ python-lxml (>= 2.3),
+ python-mock (>= 2.0),
+ python-oauthlib (>= 0.6),
+ python-openstackdocstheme (>= 1.11.0),
+ python-oslo.config (>= 1:4.0.0),
+ python-oslo.i18n (>= 2.1.0),
+ python-oslo.serialization (>= 1.10.0),
+ python-oslo.utils (>= 3.20.0),
+ python-oslotest (>= 1.10.0),
+ python-positional (>= 1.1.1),
+ python-requests (>= 2.14.2),
+ python-requests-mock (>= 1.1),
+ python-six (>= 1.9.0),
+ python-sphinx (>= 1.2.1),
+ python-stevedore (>= 1.20.0),
+ python-tempest (>= 1:16.1.0),
+ python-testrepository (>= 0.0.18),
+ python-testresources (>= 0.2.4),
+ python-testscenarios (>= 0.4),
+ python-testtools (>= 1.4.0),
+ python3-coverage (>= 4.0),
+ python3-debtcollector (>= 1.2.0),
+ python3-fixtures (>= 3.0.0),
+ python3-hacking (>= 0.10.0),
+ python3-keyring (>= 5.5.1),
+ python3-keystoneauth1 (>= 3.0.1),
+ python3-lxml (>= 2.3),
+ python3-mock (>= 2.0),
+ python3-oauthlib (>= 0.6),
+ python3-openstackdocstheme (>= 1.11.0),
+ python3-oslo.config (>= 1:4.0.0),
+ python3-oslo.i18n (>= 2.1.0),
+ python3-oslo.serialization (>= 1.10.0),
+ python3-oslo.utils (>= 3.20.0),
+ python3-oslotest (>= 1.10.0),
+ python3-pep8,
+ python3-positional (>= 1.1.1),
+ python3-requests (>= 2.14.2),
+ python3-requests-mock (>= 1.1),
+ python3-six (>= 1.9.0),
+ python3-sphinx (>= 1.2.1),
+ python3-stevedore (>= 1.20.0),
+ python3-subunit,
+ python3-tempest (>= 1:16.1.0),
+ python3-testrepository (>= 0.0.18),
+ python3-testresources (>= 0.2.4),
+ python3-testscenarios (>= 0.4),
+ python3-testtools (>= 1.4.0),
+ subunit,
+ testrepository,
 Standards-Version: 3.9.8
 Homepage: https://github.com/openstack/python-keystoneclient
 Vcs-Git: git://git.launchpad.net/~ubuntu-server-dev/ubuntu/+source/python-keystoneclient
@@ -79,21 +82,22 @@ XS-Testsuite: autopkgtest
 
 Package: python-keystoneclient
 Architecture: all
-Depends: python-debtcollector (>= 1.2.0),
-         python-keyring (>= 5.5.1),
-         python-keystoneauth1 (>= 3.0.1),
-         python-lxml (>= 2.3),
-         python-oslo.config (>= 1:4.0.0),
-         python-oslo.i18n (>= 2.1.0),
-         python-oslo.serialization (>= 1.10.0),
-         python-oslo.utils (>= 3.20.0),
-         python-pbr (>= 2.0.0),
-         python-positional (>= 1.1.1),
-         python-requests (>= 2.14.2),
-         python-six (>= 1.9.0),
-         python-stevedore (>= 1.20.0),
-         ${misc:Depends},
-         ${python:Depends}
+Depends:
+ python-debtcollector (>= 1.2.0),
+ python-keyring (>= 5.5.1),
+ python-keystoneauth1 (>= 3.0.1),
+ python-lxml (>= 2.3),
+ python-oslo.config (>= 1:4.0.0),
+ python-oslo.i18n (>= 2.1.0),
+ python-oslo.serialization (>= 1.10.0),
+ python-oslo.utils (>= 3.20.0),
+ python-pbr (>= 2.0.0),
+ python-positional (>= 1.1.1),
+ python-requests (>= 2.14.2),
+ python-six (>= 1.9.0),
+ python-stevedore (>= 1.20.0),
+ ${misc:Depends},
+ ${python:Depends},
 Description: client library for the OpenStack Keystone API - Python 2.x
  This is the identity service used by OpenStack for authentication (authN)
  and high-level authorization (authZ). It currently supports token-based
@@ -111,44 +115,12 @@ Description: client library for the OpenStack Keystone API - Python 2.x
  .
  This package contains the Python 2.x module.
 
-Package: python3-keystoneclient
-Architecture: all
-Depends: python3-debtcollector (>= 1.2.0),
-         python3-keyring (>= 5.5.1),
-         python3-keystoneauth1 (>= 3.0.1),
-         python3-lxml (>= 2.3),
-         python3-oslo.config (>= 1:4.0.0),
-         python3-oslo.i18n (>= 2.1.0),
-         python3-oslo.serialization (>= 1.10.0),
-         python3-oslo.utils (>= 3.20.0),
-         python3-pbr (>= 2.0.0),
-         python3-positional (>= 1.1.1),
-         python3-requests (>= 2.14.2),
-         python3-six (>= 1.9.0),
-         python3-stevedore (>= 1.20.0),
-         ${misc:Depends},
-         ${python3:Depends}
-Description: client library for the OpenStack Keystone API - Python 3.x
- This is the identity service used by OpenStack for authentication (authN)
- and high-level authorization (authZ). It currently supports token-based
- authN with user/service authZ, and is scalable to support OAuth, SAML,
- and OpenID in future versions. Out of the box, Keystone uses SQLite for
- its identity store database, with the option to connect to external LDAP.
- .
- This is a client for the OpenStack Keystone API. There's a Python API
- (the "keystoneclient" module), and a command-line script ("keystone").
- .
- Installing this package gets you a shell command, that you can use to
- interact with Keystone's API. Note that the "keystone" command line is
- currently deprecated in favor of the "openstack" one available within
- the "python3-openstackclient" package.
- .
- This package contains the Python 3.x module.
-
 Package: python-keystoneclient-doc
 Section: doc
 Architecture: all
-Depends: ${misc:Depends}, ${sphinxdoc:Depends}
+Depends:
+ ${misc:Depends},
+ ${sphinxdoc:Depends},
 Description: client library for the OpenStack Keystone API - doc
  This is the identity service used by OpenStack for authentication (authN)
  and high-level authorization (authZ). It currently supports token-based
@@ -165,3 +137,38 @@ Description: client library for the OpenStack Keystone API - doc
  the "python3-openstackclient" package.
  .
  This package contains the documentation.
+
+Package: python3-keystoneclient
+Architecture: all
+Depends:
+ python3-debtcollector (>= 1.2.0),
+ python3-keyring (>= 5.5.1),
+ python3-keystoneauth1 (>= 3.0.1),
+ python3-lxml (>= 2.3),
+ python3-oslo.config (>= 1:4.0.0),
+ python3-oslo.i18n (>= 2.1.0),
+ python3-oslo.serialization (>= 1.10.0),
+ python3-oslo.utils (>= 3.20.0),
+ python3-pbr (>= 2.0.0),
+ python3-positional (>= 1.1.1),
+ python3-requests (>= 2.14.2),
+ python3-six (>= 1.9.0),
+ python3-stevedore (>= 1.20.0),
+ ${misc:Depends},
+ ${python3:Depends},
+Description: client library for the OpenStack Keystone API - Python 3.x
+ This is the identity service used by OpenStack for authentication (authN)
+ and high-level authorization (authZ). It currently supports token-based
+ authN with user/service authZ, and is scalable to support OAuth, SAML,
+ and OpenID in future versions. Out of the box, Keystone uses SQLite for
+ its identity store database, with the option to connect to external LDAP.
+ .
+ This is a client for the OpenStack Keystone API. There's a Python API
+ (the "keystoneclient" module), and a command-line script ("keystone").
+ .
+ Installing this package gets you a shell command, that you can use to
+ interact with Keystone's API. Note that the "keystone" command line is
+ currently deprecated in favor of the "openstack" one available within
+ the "python3-openstackclient" package.
+ .
+ This package contains the Python 3.x module.
