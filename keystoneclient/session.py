@@ -25,7 +25,6 @@ from oslo_serialization import jsonutils
 from oslo_utils import encodeutils
 from oslo_utils import importutils
 from oslo_utils import strutils
-from positional import positional
 import requests
 import six
 from six.moves import urllib
@@ -134,7 +133,6 @@ class Session(object):
     """This property is deprecated as of the 1.7.0 release and may be removed
        in the 2.0.0 release."""
 
-    @positional(2, enforcement=positional.WARN)
     def __init__(self, auth=None, session=None, original_ip=None, verify=True,
                  cert=None, timeout=None, user_agent=None,
                  redirect=_DEFAULT_REDIRECT_LIMIT):
@@ -171,13 +169,14 @@ class Session(object):
         secure_headers = ('authorization', 'x-auth-token',
                           'x-subject-token', 'x-service-token')
         if header[0].lower() in secure_headers:
-            token_hasher = hashlib.sha1()
+            # hashlib.sha1() bandit nosec, as it is HMAC-SHA1 in
+            # keystone, which is considered secure (unlike just sha1)
+            token_hasher = hashlib.sha1()  # nosec(lhinds)
             token_hasher.update(header[1].encode('utf-8'))
             token_hash = token_hasher.hexdigest()
             return (header[0], '{SHA1}%s' % token_hash)
         return header
 
-    @positional()
     def _http_log_request(self, url, method=None, data=None,
                           headers=None, logger=_logger):
         if not logger.isEnabledFor(logging.DEBUG):
@@ -256,7 +255,6 @@ class Session(object):
         logger.debug(' '.join(string_parts))
 
     # NOTE(artmr): parameter 'original_ip' value is never used
-    @positional(enforcement=positional.WARN)
     def request(self, url, method, json=None, original_ip=None,
                 user_agent=None, redirect=None, authenticated=None,
                 endpoint_filter=None, auth=None, requests_auth=None,
@@ -806,7 +804,7 @@ class Session(object):
         auth = self._auth_required(auth, msg)
         return auth.get_project_id(self)
 
-    @positional.classmethod()
+    @classmethod
     def get_conf_options(cls, deprecated_opts=None):
         """Get oslo_config options that are needed for a :py:class:`.Session`.
 
@@ -855,7 +853,7 @@ class Session(object):
                            help='Timeout value for http requests'),
                 ]
 
-    @positional.classmethod()
+    @classmethod
     def register_conf_options(cls, conf, group, deprecated_opts=None):
         """Register the oslo_config options that are needed for a session.
 
