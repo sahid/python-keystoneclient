@@ -37,9 +37,11 @@ from keystoneclient.v3 import ec2
 from keystoneclient.v3 import endpoint_groups
 from keystoneclient.v3 import endpoints
 from keystoneclient.v3 import groups
+from keystoneclient.v3 import limits
 from keystoneclient.v3 import policies
 from keystoneclient.v3 import projects
 from keystoneclient.v3 import regions
+from keystoneclient.v3 import registered_limits
 from keystoneclient.v3 import role_assignments
 from keystoneclient.v3 import roles
 from keystoneclient.v3 import services
@@ -158,6 +160,10 @@ class Client(httpclient.HTTPClient):
 
         :py:class:`keystoneclient.v3.groups.GroupManager`
 
+    .. py:attribute:: limits
+
+        :py:class:`keystoneclient.v3.limits.LimitManager`
+
     .. py:attribute:: oauth1
 
         :py:class:`keystoneclient.v3.contrib.oauth1.core.OAuthManager`
@@ -169,6 +175,10 @@ class Client(httpclient.HTTPClient):
     .. py:attribute:: regions
 
         :py:class:`keystoneclient.v3.regions.RegionManager`
+
+    .. py:attribute:: registered_limits
+
+        :py:class:`keystoneclient.v3.registered_limits.RegisteredLimitManager`
 
     .. py:attribute:: role_assignments
 
@@ -230,9 +240,12 @@ class Client(httpclient.HTTPClient):
         self.domains = domains.DomainManager(self._adapter)
         self.federation = federation.FederationManager(self._adapter)
         self.groups = groups.GroupManager(self._adapter)
+        self.limits = limits.LimitManager(self._adapter)
         self.oauth1 = oauth1.create_oauth_manager(self._adapter)
         self.policies = policies.PolicyManager(self._adapter)
         self.projects = projects.ProjectManager(self._adapter)
+        self.registered_limits = registered_limits.RegisteredLimitManager(
+            self._adapter)
         self.regions = regions.RegionManager(self._adapter)
         self.role_assignments = (
             role_assignments.RoleAssignmentManager(self._adapter))

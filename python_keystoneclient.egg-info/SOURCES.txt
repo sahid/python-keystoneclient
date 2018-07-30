@@ -199,10 +199,12 @@ keystoneclient/tests/unit/v3/test_endpoint_policy.py
 keystoneclient/tests/unit/v3/test_endpoints.py
 keystoneclient/tests/unit/v3/test_federation.py
 keystoneclient/tests/unit/v3/test_groups.py
+keystoneclient/tests/unit/v3/test_limits.py
 keystoneclient/tests/unit/v3/test_oauth1.py
 keystoneclient/tests/unit/v3/test_policies.py
 keystoneclient/tests/unit/v3/test_projects.py
 keystoneclient/tests/unit/v3/test_regions.py
+keystoneclient/tests/unit/v3/test_registered_limits.py
 keystoneclient/tests/unit/v3/test_role_assignments.py
 keystoneclient/tests/unit/v3/test_roles.py
 keystoneclient/tests/unit/v3/test_service_catalog.py
@@ -236,9 +238,11 @@ keystoneclient/v3/ec2.py
 keystoneclient/v3/endpoint_groups.py
 keystoneclient/v3/endpoints.py
 keystoneclient/v3/groups.py
+keystoneclient/v3/limits.py
 keystoneclient/v3/policies.py
 keystoneclient/v3/projects.py
 keystoneclient/v3/regions.py
+keystoneclient/v3/registered_limits.py
 keystoneclient/v3/role_assignments.py
 keystoneclient/v3/roles.py
 keystoneclient/v3/services.py
@@ -276,6 +280,8 @@ python_keystoneclient.egg-info/requires.txt
 python_keystoneclient.egg-info/top_level.txt
 releasenotes/notes/.placeholder
 releasenotes/notes/Add-allow-expired-flag-to-validate-25b8914f4deb359b.yaml
+releasenotes/notes/add-support-for-limits-6f883d6d3054a500.yaml
+releasenotes/notes/add-support-for-registered-limits-d83b888ea65a614b.yaml
 releasenotes/notes/bp-application-credentials-27728ded876d7d5a.yaml
 releasenotes/notes/bp-domain-config-9566e672a98f4e7f.yaml
 releasenotes/notes/bp-pci-dss-query-password-expired-users-b0c4b1bbdcf33f16.yaml
