@@ -1,6 +1,17 @@
 CHANGES
 =======
 
+3.17.0
+------
+
+* Add support for project-specific limits
+* Add support for registered limits
+* Fix python3 test compat
+* fix tox python3 overrides
+* Remove PyPI downloads
+* fix a typo in docstring
+* Trivial: Update pypi url to new url
+
 3.16.0
 ------
 
