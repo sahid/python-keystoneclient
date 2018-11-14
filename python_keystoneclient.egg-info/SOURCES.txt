@@ -1,6 +1,6 @@
 .coveragerc
 .mailmap
-.testr.conf
+.stestr.conf
 .zuul.yaml
 AUTHORS
 CONTRIBUTING.rst
@@ -270,6 +270,8 @@ keystoneclient/v3/contrib/oauth1/consumers.py
 keystoneclient/v3/contrib/oauth1/core.py
 keystoneclient/v3/contrib/oauth1/request_tokens.py
 keystoneclient/v3/contrib/oauth1/utils.py
+playbooks/keystoneclient-dsvm-functional/post.yaml
+playbooks/keystoneclient-dsvm-functional/run.yaml
 python_keystoneclient.egg-info/PKG-INFO
 python_keystoneclient.egg-info/SOURCES.txt
 python_keystoneclient.egg-info/dependency_links.txt
@@ -285,6 +287,7 @@ releasenotes/notes/add-support-for-registered-limits-d83b888ea65a614b.yaml
 releasenotes/notes/bp-application-credentials-27728ded876d7d5a.yaml
 releasenotes/notes/bp-domain-config-9566e672a98f4e7f.yaml
 releasenotes/notes/bp-pci-dss-query-password-expired-users-b0c4b1bbdcf33f16.yaml
+releasenotes/notes/bug-1615076-26962c85aeaf288c.yaml
 releasenotes/notes/bug-1616105-cc8b85eb056e99e2.yaml
 releasenotes/notes/bug-1641674-4862454115265e76.yaml
 releasenotes/notes/bug-1654847-d2e9df994c7b617f.yaml
@@ -306,6 +309,7 @@ releasenotes/source/newton.rst
 releasenotes/source/ocata.rst
 releasenotes/source/pike.rst
 releasenotes/source/queens.rst
+releasenotes/source/rocky.rst
 releasenotes/source/unreleased.rst
 releasenotes/source/_static/.placeholder
 releasenotes/source/_templates/.placeholder
