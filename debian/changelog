@@ -2,6 +2,7 @@ python-keystoneclient (1:3.18.0-0ubuntu1) UNRELEASED; urgency=medium
 
   * New upstream release for OpenStack Stein.
   * d/control: Align (Build-)Depends with upstream.
+  * d/rules: Run tests with pkgos-dh_auto_test.
 
  -- Corey Bryant <corey.bryant@canonical.com>  Wed, 14 Nov 2018 13:22:45 -0500
 
