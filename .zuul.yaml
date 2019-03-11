@@ -1,13 +1,19 @@
 - job:
     name: keystoneclient-devstack-functional
-    parent: legacy-dsvm-base
-    run: playbooks/keystoneclient-dsvm-functional/run.yaml
-    post-run: playbooks/keystoneclient-dsvm-functional/post.yaml
+    parent: devstack-minimal
     timeout: 4200
     required-projects:
-      - openstack-infra/devstack-gate
       - openstack/keystone
       - openstack/python-keystoneclient
+    run: playbooks/run-ds-tox.yaml
+    post-run: playbooks/tox-post.yaml
+    vars:
+      devstack_localrc:
+        USE_PYTHON3: True
+      devstack_services:
+        key: true
+      tox_envlist: functional
+      zuul_work_dir: src/git.openstack.org/openstack/python-keystoneclient
 
 - project:
     templates:
@@ -16,6 +22,7 @@
       - openstack-python-jobs
       - openstack-python35-jobs
       - openstack-python36-jobs
+      - openstack-python37-jobs
       - publish-openstack-docs-pti
       - check-requirements
       - lib-forward-testing
@@ -23,5 +30,7 @@
       - release-notes-jobs-python3
     check:
       jobs:
-        - keystoneclient-devstack-functional:
-            voting: false
+        - keystoneclient-devstack-functional
+    gate:
+      jobs:
+        - keystoneclient-devstack-functional
