@@ -1,6 +1,22 @@
 CHANGES
 =======
 
+3.19.0
+------
+
+* add python 3.7 unit test job
+* Add return-request-id-to-caller function(v3/contrib)
+* Update hacking version
+* Change openstack-dev to openstack-discuss
+* Add Python 3.6 classifier to setup.cfg
+* Add release notes for return-request-id-to-caller
+* Fix keystoneclient-devstack-functional job
+* Use python3 for functional tests
+* Make the functional test voting
+* Add py36 tox environment
+* Convert functional tests to Zuulv3
+* Add return-request-id-to-caller function(v3/contrib)
+
 3.18.0
 ------
 

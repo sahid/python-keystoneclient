@@ -110,7 +110,6 @@ keystoneclient/tests/__init__.py
 keystoneclient/tests/functional/__init__.py
 keystoneclient/tests/functional/base.py
 keystoneclient/tests/functional/test_base.py
-keystoneclient/tests/functional/hooks/post_test_hook.sh
 keystoneclient/tests/functional/v3/__init__.py
 keystoneclient/tests/functional/v3/client_fixtures.py
 keystoneclient/tests/functional/v3/test_credentials.py
@@ -270,8 +269,8 @@ keystoneclient/v3/contrib/oauth1/consumers.py
 keystoneclient/v3/contrib/oauth1/core.py
 keystoneclient/v3/contrib/oauth1/request_tokens.py
 keystoneclient/v3/contrib/oauth1/utils.py
-playbooks/keystoneclient-dsvm-functional/post.yaml
-playbooks/keystoneclient-dsvm-functional/run.yaml
+playbooks/run-ds-tox.yaml
+playbooks/tox-post.yaml
 python_keystoneclient.egg-info/PKG-INFO
 python_keystoneclient.egg-info/SOURCES.txt
 python_keystoneclient.egg-info/dependency_links.txt
@@ -302,6 +301,7 @@ releasenotes/notes/remove_apiclient_exceptions-0cd5c8d16aa09a22.yaml
 releasenotes/notes/remove_apiclient_exceptions-6580003a885db286.yaml
 releasenotes/notes/remove_cli-d2c4435ba6a09b79.yaml
 releasenotes/notes/removed-generic-client-ff505b2b01bc9302.yaml
+releasenotes/notes/return-request-id-to-caller-97fa269ad626f8c1.yaml
 releasenotes/source/conf.py
 releasenotes/source/index.rst
 releasenotes/source/mitaka.rst
