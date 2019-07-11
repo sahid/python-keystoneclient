@@ -1,11 +1,11 @@
-python-keystoneclient (1:3.19.0-0ubuntu2) UNRELEASED; urgency=medium
+python-keystoneclient (1:3.19.0-0ubuntu2) eoan; urgency=medium
 
   * Drop Python 2 support:
     - d/control: Drop python-keystoneclient binary package.
     - d/control: Drop BDI's on python-*.
     - d/rules: Skip install and test of Python 2 module.
 
- -- James Page <james.page@ubuntu.com>  Thu, 11 Jul 2019 08:28:23 +0100
+ -- James Page <james.page@ubuntu.com>  Thu, 11 Jul 2019 08:41:31 +0100
 
 python-keystoneclient (1:3.19.0-0ubuntu1) disco; urgency=medium
 
