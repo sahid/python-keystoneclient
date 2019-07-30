@@ -1,6 +1,22 @@
 CHANGES
 =======
 
+3.20.0
+------
+
+* Blacklist bandit 1.6.0 & cap sphinx for 2.7
+* Update the constraints url
+* Add Python 3 Train unit tests
+* Follow bandit B105: hardcoded\_password\_string
+* Replace git.openstack.org URLs with opendev.org URLs
+* OpenDev Migration Patch
+* Update the min version of tox
+* Update master for stable/stein
+* Drop py35 jobs
+* Make tests pass in 2020
+* Update json module to jsonutils
+* Add support for app cred access rules header
+
 3.19.0
 ------
 
