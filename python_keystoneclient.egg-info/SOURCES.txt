@@ -293,6 +293,7 @@ releasenotes/notes/bug-1654847-d2e9df994c7b617f.yaml
 releasenotes/notes/deprecated_auth-d2a2bf537bdb88d3.yaml
 releasenotes/notes/implied_roles-ea39d3c3d998d482.yaml
 releasenotes/notes/ksc_2.1.0-739ded9c4c3f8aaa.yaml
+releasenotes/notes/list_projects_filtered_by_the_parent_project-a873974f197c1e37.yaml
 releasenotes/notes/list_role_assignment_names-7e1b7eb8c2d22d7c.yaml
 releasenotes/notes/project-tags-1f8a32d389951e7a.yaml
 releasenotes/notes/remove-credentials-data-46ab3c3c248047cf.yaml
