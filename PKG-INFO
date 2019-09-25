@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: python-keystoneclient
-Version: 3.20.0
+Version: 3.21.0
 Summary: Client Library for OpenStack Identity
 Home-page: https://docs.openstack.org/python-keystoneclient/latest/
 Author: OpenStack
