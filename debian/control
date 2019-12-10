@@ -7,7 +7,7 @@ Uploaders:
  Thomas Goirand <zigo@debian.org>,
  Corey Bryant <corey.bryant@canonical.com>,
 Build-Depends:
- debhelper (>= 10),
+ debhelper-compat (= 10),
  dh-python,
  openstack-pkg-tools,
  python3-all,
