@@ -181,6 +181,7 @@ keystoneclient/tests/unit/v3/__init__.py
 keystoneclient/tests/unit/v3/client_fixtures.py
 keystoneclient/tests/unit/v3/saml2_fixtures.py
 keystoneclient/tests/unit/v3/test_access.py
+keystoneclient/tests/unit/v3/test_access_rules.py
 keystoneclient/tests/unit/v3/test_application_credentials.py
 keystoneclient/tests/unit/v3/test_auth.py
 keystoneclient/tests/unit/v3/test_auth_manager.py
@@ -227,6 +228,7 @@ keystoneclient/v2_0/tenants.py
 keystoneclient/v2_0/tokens.py
 keystoneclient/v2_0/users.py
 keystoneclient/v3/__init__.py
+keystoneclient/v3/access_rules.py
 keystoneclient/v3/application_credentials.py
 keystoneclient/v3/auth.py
 keystoneclient/v3/client.py
@@ -286,6 +288,7 @@ releasenotes/notes/add-support-for-registered-limits-d83b888ea65a614b.yaml
 releasenotes/notes/bp-application-credentials-27728ded876d7d5a.yaml
 releasenotes/notes/bp-domain-config-9566e672a98f4e7f.yaml
 releasenotes/notes/bp-pci-dss-query-password-expired-users-b0c4b1bbdcf33f16.yaml
+releasenotes/notes/bp-whitelist-extension-for-app-creds-d03526e52e3edcce.yaml
 releasenotes/notes/bug-1615076-26962c85aeaf288c.yaml
 releasenotes/notes/bug-1616105-cc8b85eb056e99e2.yaml
 releasenotes/notes/bug-1641674-4862454115265e76.yaml
