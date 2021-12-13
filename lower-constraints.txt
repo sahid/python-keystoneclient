@@ -23,7 +23,7 @@ jsonschema==2.6.0
 keyring==5.5.1
 keystoneauth1==3.4.0
 linecache2==1.0.0
-lxml==3.4.1
+lxml==4.6.5
 mccabe==0.2.1
 mock==2.0.0
 monotonic==0.6
